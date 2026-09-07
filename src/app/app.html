@@ -1,1 +1,15 @@
-<router-outlet></router-outlet>
+<mat-toolbar class="navbar">
+  <div class="brand">
+    <mat-icon>grupo</mat-icon>
+    <span>Gestión de Usuarios</span>
+  </div>
+
+  <span class="spacer"></span>
+
+  <nav>
+    <a matButton routerLink="/about"> <mat-icon>home</mat-icon>Usuarios </a>
+  </nav>
+</mat-toolbar>
+<main class="main-content">
+  <router-outlet></router-outlet>
+</main>

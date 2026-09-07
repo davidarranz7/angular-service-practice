@@ -1,7 +1,19 @@
 <div class="page-container">
   <header class="page-header">
-    <h1>usuarios</h1>
-    <p>Lista de usuarios</p>
+    <h1>Usuarios</h1>
+
+    <div class="header-actions">
+      <div class="search-container">
+        <mat-icon>search</mat-icon>
+
+        <input type="search" placeholder="Buscar usuario..." />
+      </div>
+
+      <div class="users-count">
+        <mat-icon>group</mat-icon>
+        <span>{{ users().length }} usuarios</span>
+      </div>
+    </div>
   </header>
 
   <div class="table-container">
@@ -9,9 +21,10 @@
       <thead>
         <tr>
           <th>ID</th>
-          <th>Username</th>
-          <th>Email</th>
-          <th>Telefono</th>
+          <th>USUARIO</th>
+          <th>EMAIL</th>
+          <th>TELÉFONO</th>
+          <th class="detail-header"></th>
         </tr>
       </thead>
 
@@ -24,9 +37,21 @@
             tabindex="0"
           >
             <td>{{ user.id }}</td>
-            <td>{{ user.username }}</td>
+
+            <td>
+              <div class="user-info">
+                <mat-icon>person</mat-icon>
+                <span>{{ user.username }}</span>
+              </div>
+            </td>
+
             <td>{{ user.email }}</td>
+
             <td>{{ user.phone }}</td>
+
+            <td class="detail-column">
+              <mat-icon>chevron_right</mat-icon>
+            </td>
           </tr>
         }
       </tbody>

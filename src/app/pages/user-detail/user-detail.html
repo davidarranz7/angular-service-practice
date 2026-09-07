@@ -1,52 +1,76 @@
 @if (user(); as currentUser) {
-  <div class="page-container">
-    <header class="page-header">
-      <h1>{{ currentUser.name }}</h1>
-      <p class="username">@{{ currentUser.username }}</p>
-    </header>
+  <div class="user-detail-page">
+    <a mat-button routerLink="/about" class="back-button">
+      <mat-icon>arrow_back</mat-icon>
+      Volver a usuarios
+    </a>
 
-    <main class="user-content">
-      <section class="user-section">
-        <h2>Informacion Personal</h2>
-        <div class="user-info">
-          <p><strong>ID:</strong>{{ currentUser.id }}</p>
-          <p><strong>Username:</strong>{{ currentUser.username }}</p>
+    <mat-card class="user-card">
+      <header class="user-header">
+        <div class="avatar">
+          <mat-icon>person</mat-icon>
         </div>
-      </section>
 
-      <section class="user-section">
-        <h2>Contacto</h2>
-        <div class="user-info">
-          <p><strong>Email:</strong>{{ currentUser.email }}</p>
-          <p><strong>Telefono:</strong>{{ currentUser.phone }}</p>
-          <p><strong>Website:</strong>{{ currentUser.website }}</p>
+        <div>
+          <h1>{{ currentUser.name }}</h1>
+          <p>@{{ currentUser.username }}</p>
         </div>
-      </section>
+      </header>
 
-      <section class="user-section">
-        <h2>Direccion</h2>
-        <div class="user-info">
-          <p><strong>Calle:</strong>{{ currentUser.address.street }}</p>
-          <p><strong>Suite:</strong>{{ currentUser.address.suite }}</p>
-          <p><strong>Ciudad:</strong>{{ currentUser.address.city }}</p>
-          <p><strong>Codigo Postal:</strong>{{ currentUser.address.zipcode }}</p>
+      <mat-divider></mat-divider>
+
+      <div class="information-title">
+        <mat-icon>person</mat-icon>
+        <h2>Información</h2>
+      </div>
+
+      <main class="user-content">
+        <section class="user-section">
+          <h3>Información personal</h3>
+
+          <p><strong>ID:</strong> {{ currentUser.id }}</p>
+          <p><strong>Usuario:</strong> {{ currentUser.username }}</p>
+          <p><strong>Email:</strong> {{ currentUser.email }}</p>
+          <p><strong>Teléfono:</strong> {{ currentUser.phone }}</p>
+          <p><strong>Website:</strong> {{ currentUser.website }}</p>
+        </section>
+
+        <mat-divider></mat-divider>
+
+        <section class="user-section">
+          <h3>
+            <mat-icon>location_on</mat-icon>
+            Dirección
+          </h3>
+
+          <p><strong>Calle:</strong> {{ currentUser.address.street }}</p>
+          <p><strong>Suite:</strong> {{ currentUser.address.suite }}</p>
+          <p><strong>Ciudad:</strong> {{ currentUser.address.city }}</p>
+          <p><strong>Código Postal:</strong> {{ currentUser.address.zipcode }}</p>
           <p>
-            <strong>Geo:</strong> Lat: {{ currentUser.address.geo.lat }}, Lng:
-            {{ currentUser.address.geo.lng }}
+            <strong>Coordenadas:</strong>
+            Lat: {{ currentUser.address.geo.lat }}, Lng: {{ currentUser.address.geo.lng }}
           </p>
-        </div>
-      </section>
+        </section>
 
-      <section class="user-section">
-        <h2>Empresa</h2>
-        <div class="user-info">
-          <p><strong>Nombre:</strong>{{ currentUser.company.name }}</p>
-          <p><strong>Catch Phrase:</strong>{{ currentUser.company.catchPhrase }}</p>
-          <p><strong>BS:</strong>{{ currentUser.company.bs }}</p>
-        </div>
-      </section>
-    </main>
+        <mat-divider></mat-divider>
+
+        <section class="user-section">
+          <h3>
+            <mat-icon>business_center</mat-icon>
+            Empresa
+          </h3>
+
+          <p><strong>Nombre:</strong> {{ currentUser.company.name }}</p>
+          <p>
+            <strong>Catch Phrase:</strong>
+            {{ currentUser.company.catchPhrase }}
+          </p>
+          <p><strong>BS:</strong> {{ currentUser.company.bs }}</p>
+        </section>
+      </main>
+    </mat-card>
   </div>
 } @else {
-  <p>Loading user details...</p>
+  <p>Cargando usuario...</p>
 }

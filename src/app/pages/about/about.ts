@@ -3,15 +3,19 @@ import { CommonModule } from '@angular/common';
 import { UserService } from '../../services/user-service';
 import { User } from '../../models/user';
 import { Router } from '@angular/router';
+import { MatTableModule } from '@angular/material/table';
+import { MatIcon } from '@angular/material/icon';
 
 @Component({
   selector: 'app-about',
-  imports: [CommonModule],
+  imports: [CommonModule, MatTableModule, MatIcon],
   templateUrl: './about.html',
   styleUrl: './about.scss',
 })
 export class About implements OnInit {
   users = signal<User[]>([]);
+
+  displayedColumns: string[] = ['id', 'username', 'email', 'phone'];
 
   private userService = inject(UserService);
 

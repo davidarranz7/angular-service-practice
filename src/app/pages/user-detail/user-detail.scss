@@ -1,29 +1,125 @@
-.user-content {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+.user-detail-page {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
 
-  .user-section {
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 16px;
+  .back-button {
+    margin-bottom: 18px;
+    color: #475569;
 
-    h2 {
-      margin-top: 0;
-      margin-bottom: 16px;
-    }
-
-    .user-info {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-
-      p {
-        margin: 0;
-      }
+    mat-icon {
+      margin-right: 6px;
     }
   }
-  .username {
-    font-weight: 500;
+
+  .user-card {
+    padding: 28px;
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+
+    .user-header {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      padding-bottom: 24px;
+
+      .avatar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 92px;
+        height: 92px;
+        background: #eaf3ff;
+        border-radius: 50%;
+
+        mat-icon {
+          width: 54px;
+          height: 54px;
+          font-size: 54px;
+          color: #64748b;
+        }
+      }
+
+      div:last-child {
+        h1 {
+          margin: 0 0 6px;
+          font-size: 30px;
+          font-weight: 700;
+          color: #172033;
+        }
+
+        p {
+          margin: 0;
+          font-size: 17px;
+          color: #64748b;
+        }
+      }
+    }
+
+    .information-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 24px 0 16px;
+
+      mat-icon {
+        color: #1976d2;
+      }
+
+      h2 {
+        margin: 0;
+        font-size: 21px;
+        font-weight: 700;
+        color: #172033;
+      }
+    }
+
+    .user-content {
+      padding: 0 24px;
+      border: 1px solid #dbe3ec;
+      border-radius: 14px;
+
+      .user-section {
+        padding: 24px 0;
+
+        h3 {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          margin: 0 0 20px;
+          font-size: 18px;
+          font-weight: 700;
+          color: #172033;
+
+          mat-icon {
+            color: #1976d2;
+          }
+        }
+
+        p {
+          display: grid;
+          grid-template-columns: 220px 1fr;
+          align-items: center;
+          min-height: 38px;
+          margin: 0;
+          color: #172033;
+          font-size: 15px;
+
+          strong {
+            color: #64748b;
+            font-weight: 500;
+          }
+        }
+      }
+
+      mat-divider {
+        border-color: #e2e8f0;
+      }
+    }
+
+    > mat-divider {
+      border-color: #e2e8f0;
+    }
   }
 }
