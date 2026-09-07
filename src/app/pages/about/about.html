@@ -1,0 +1,35 @@
+<div class="page-container">
+  <header class="page-header">
+    <h1>usuarios</h1>
+    <p>Lista de usuarios</p>
+  </header>
+
+  <div class="table-container">
+    <table class="users-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Telefono</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        @for (user of users(); track user.id) {
+          <tr
+            class="user-row"
+            (click)="goToUserDetail(user.id)"
+            (keydown.enter)="goToUserDetail(user.id)"
+            tabindex="0"
+          >
+            <td>{{ user.id }}</td>
+            <td>{{ user.username }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.phone }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+.user-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+
+  .user-section {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 16px;
+
+    h2 {
+      margin-top: 0;
+      margin-bottom: 16px;
+    }
+
+    .user-info {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+  .username {
+    font-weight: 500;
+  }
+}

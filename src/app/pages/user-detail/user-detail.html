@@ -1,0 +1,52 @@
+@if (user(); as currentUser) {
+  <div class="page-container">
+    <header class="page-header">
+      <h1>{{ currentUser.name }}</h1>
+      <p class="username">@{{ currentUser.username }}</p>
+    </header>
+
+    <main class="user-content">
+      <section class="user-section">
+        <h2>Informacion Personal</h2>
+        <div class="user-info">
+          <p><strong>ID:</strong>{{ currentUser.id }}</p>
+          <p><strong>Username:</strong>{{ currentUser.username }}</p>
+        </div>
+      </section>
+
+      <section class="user-section">
+        <h2>Contacto</h2>
+        <div class="user-info">
+          <p><strong>Email:</strong>{{ currentUser.email }}</p>
+          <p><strong>Telefono:</strong>{{ currentUser.phone }}</p>
+          <p><strong>Website:</strong>{{ currentUser.website }}</p>
+        </div>
+      </section>
+
+      <section class="user-section">
+        <h2>Direccion</h2>
+        <div class="user-info">
+          <p><strong>Calle:</strong>{{ currentUser.address.street }}</p>
+          <p><strong>Suite:</strong>{{ currentUser.address.suite }}</p>
+          <p><strong>Ciudad:</strong>{{ currentUser.address.city }}</p>
+          <p><strong>Codigo Postal:</strong>{{ currentUser.address.zipcode }}</p>
+          <p>
+            <strong>Geo:</strong> Lat: {{ currentUser.address.geo.lat }}, Lng:
+            {{ currentUser.address.geo.lng }}
+          </p>
+        </div>
+      </section>
+
+      <section class="user-section">
+        <h2>Empresa</h2>
+        <div class="user-info">
+          <p><strong>Nombre:</strong>{{ currentUser.company.name }}</p>
+          <p><strong>Catch Phrase:</strong>{{ currentUser.company.catchPhrase }}</p>
+          <p><strong>BS:</strong>{{ currentUser.company.bs }}</p>
+        </div>
+      </section>
+    </main>
+  </div>
+} @else {
+  <p>Loading user details...</p>
+}
