@@ -6,8 +6,40 @@
       <div class="search-container">
         <mat-icon>search</mat-icon>
 
-        <input type="search" placeholder="Buscar usuario..." />
+        <input
+          type="search"
+          placeholder="Buscar usuario..."
+          [value]="nameSearch()"
+          (input)="onNameSearchChange($event)"
+          (keydown.enter)="onNameSearchEnter()"
+          [matAutocomplete]="auto"
+        />
+
+        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="onNameSelected($event)">
+          @for (user of nameSuggestions(); track user.id) {
+            <mat-option [value]="user.name">
+              {{ user.name }}
+            </mat-option>
+          }
+        </mat-autocomplete>
       </div>
+
+      <mat-form-field appearance="outline" class="city-filter" subscriptSizing="dynamic">
+        <mat-label>Ciudad</mat-label>
+        <mat-select [value]="cityFilter()" (selectionChange)="onCityFilterChange($event.value)">
+          <mat-option value=""> Todas las ciudades </mat-option>
+          @for (city of cities(); track city) {
+            <mat-option [value]="city">
+              {{ city }}
+            </mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+
+      <button mat-stroked-button type="button" class="reset-button" (click)="resetFilters()">
+        <mat-icon>restart-alt</mat-icon>
+        <span>Restablecer filtros</span>
+      </button>
 
       <div class="users-count">
         <mat-icon>group</mat-icon>
@@ -29,7 +61,7 @@
       </thead>
 
       <tbody>
-        @for (user of users(); track user.id) {
+        @for (user of filteredUsers(); track user.id) {
           <tr
             class="user-row"
             (click)="goToUserDetail(user.id)"

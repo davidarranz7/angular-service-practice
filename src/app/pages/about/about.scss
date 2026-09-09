@@ -58,6 +58,20 @@
         }
       }
 
+      .city-filter {
+        width: 190px;
+        margin: 0;
+
+        --mat-form-field-container-height: 46px;
+        --mat-form-field-container-vertical-padding: 10px;
+
+        --mat-form-field-outline-color: #dbe3ec;
+        --mat-form-field-hover-outline-color: #94a3b8;
+        --mat-form-field-focus-outline-color: #1976d2;
+
+        --mat-form-field-container-text-size: 14px;
+      }
+
       .users-count {
         display: flex;
         align-items: center;
