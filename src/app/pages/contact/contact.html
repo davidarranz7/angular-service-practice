@@ -1,0 +1,19 @@
+<header class="page-header">
+  <h1>{{ 'CONTACT.TITLE' | translate }}</h1>
+  <p>{{ 'CONTACT.SUBTITLE' | translate }}</p>
+</header>
+<form class="contact-form">
+  <mat-form-field appearance="outline">
+    <mat-label>{{ 'CONTACT.NAME' | translate }}</mat-label>
+    <input matInput type="text" />
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>{{ 'CONTACT.EMAIL' | translate }}</mat-label>
+    <input matInput type="email" />
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>{{ 'CONTACT.MESSAGE' | translate }}</mat-label>
+    <textarea matInput rows="5"></textarea>
+  </mat-form-field>
+  <button mat-flat-button type="submit">{{ 'CONTACT.SEND' | translate }}</button>
+</form>

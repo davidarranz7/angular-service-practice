@@ -2,7 +2,7 @@
   <div class="user-detail-page">
     <a mat-button routerLink="/about" class="back-button">
       <mat-icon>arrow_back</mat-icon>
-      Volver a usuarios
+      {{ 'USER_DETAIL.BACK' | translate }}
     </a>
 
     <mat-card class="user-card">
@@ -21,18 +21,28 @@
 
       <div class="information-title">
         <mat-icon>person</mat-icon>
-        <h2>Información</h2>
+        <h2>{{ 'USER_DETAIL.INFORMATION' | translate }}</h2>
       </div>
 
       <main class="user-content">
         <section class="user-section">
-          <h3>Información personal</h3>
+          <h3>{{ 'USER_DETAIL.PERSONAL_INFORMATION' | translate }}</h3>
 
-          <p><strong>ID:</strong> {{ currentUser.id }}</p>
-          <p><strong>Usuario:</strong> {{ currentUser.username }}</p>
-          <p><strong>Email:</strong> {{ currentUser.email }}</p>
-          <p><strong>Teléfono:</strong> {{ currentUser.phone }}</p>
-          <p><strong>Website:</strong> {{ currentUser.website }}</p>
+          <p>
+            <strong>{{ 'USER_DETAIL.ID' | translate }}:</strong> {{ currentUser.id }}
+          </p>
+          <p>
+            <strong>{{ 'USER_DETAIL.USERNAME' | translate }}:</strong> {{ currentUser.username }}
+          </p>
+          <p>
+            <strong>{{ 'USER_DETAIL.EMAIL' | translate }}:</strong> {{ currentUser.email }}
+          </p>
+          <p>
+            <strong>{{ 'USER_DETAIL.PHONE' | translate }}:</strong> {{ currentUser.phone }}
+          </p>
+          <p>
+            <strong>{{ 'USER_DETAIL.WEBSITE' | translate }}:</strong> {{ currentUser.website }}
+          </p>
         </section>
 
         <mat-divider></mat-divider>
@@ -40,15 +50,25 @@
         <section class="user-section">
           <h3>
             <mat-icon>location_on</mat-icon>
-            Dirección
+            {{ 'USER_DETAIL.ADDRESS' | translate }}
           </h3>
 
-          <p><strong>Calle:</strong> {{ currentUser.address.street }}</p>
-          <p><strong>Suite:</strong> {{ currentUser.address.suite }}</p>
-          <p><strong>Ciudad:</strong> {{ currentUser.address.city }}</p>
-          <p><strong>Código Postal:</strong> {{ currentUser.address.zipcode }}</p>
           <p>
-            <strong>Coordenadas:</strong>
+            <strong>{{ 'USER_DETAIL.STREET' | translate }}:</strong>
+            {{ currentUser.address.street }}
+          </p>
+          <p>
+            <strong>{{ 'USER_DETAIL.SUITE' | translate }}:</strong> {{ currentUser.address.suite }}
+          </p>
+          <p>
+            <strong>{{ 'USER_DETAIL.CITY' | translate }}:</strong> {{ currentUser.address.city }}
+          </p>
+          <p>
+            <strong>{{ 'USER_DETAIL.ZIPCODE' | translate }}:</strong>
+            {{ currentUser.address.zipcode }}
+          </p>
+          <p>
+            <strong>{{ 'USER_DETAIL.COORDINATES' | translate }}:</strong>
             Lat: {{ currentUser.address.geo.lat }}, Lng: {{ currentUser.address.geo.lng }}
           </p>
         </section>
@@ -58,15 +78,15 @@
         <section class="user-section">
           <h3>
             <mat-icon>business_center</mat-icon>
-            Empresa
+            {{ 'USER_DETAIL.COMPANY' | translate }}
           </h3>
 
-          <p><strong>Nombre:</strong> {{ currentUser.company.name }}</p>
+          <p><strong>{{ 'USER_DETAIL.COMPANY_NAME' | translate }}:</strong> {{ currentUser.company.name }}</p>
           <p>
-            <strong>Catch Phrase:</strong>
+            <strong>{{ 'USER_DETAIL.CATCH_PHRASE' | translate }}:</strong>
             {{ currentUser.company.catchPhrase }}
           </p>
-          <p><strong>BS:</strong> {{ currentUser.company.bs }}</p>
+          <p><strong>{{ 'USER_DETAIL.BS' | translate }}:</strong> {{ currentUser.company.bs }}</p>
         </section>
       </main>
     </mat-card>

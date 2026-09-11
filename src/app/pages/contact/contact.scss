@@ -1,0 +1,100 @@
+:host {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 48px 24px 64px;
+}
+
+:host::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  width: 420px;
+  height: 420px;
+  background: rgba(79, 70, 229, 0.08);
+  border-radius: 50%;
+  filter: blur(90px);
+  transform: translateX(-65%);
+  pointer-events: none;
+}
+
+:host::after {
+  content: '';
+  position: absolute;
+  top: 180px;
+  left: 50%;
+  width: 320px;
+  height: 320px;
+  background: rgba(33, 112, 228, 0.07);
+  border-radius: 50%;
+  filter: blur(90px);
+  transform: translateX(-20%);
+  pointer-events: none;
+}
+
+.page-header {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 32px;
+  text-align: center;
+
+  h1 {
+    margin: 0 0 8px;
+    color: var(--text-primary);
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 16px;
+  }
+}
+
+.contact-form {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 32px;
+  background: var(--surface);
+  border-radius: 16px;
+  box-shadow:
+    0 4px 24px rgba(30, 64, 175, 0.06),
+    0 2px 8px rgba(15, 23, 42, 0.04);
+
+  mat-form-field {
+    width: 100%;
+  }
+
+  button {
+    align-self: flex-end;
+    min-width: 120px;
+    height: 44px;
+    border-radius: 8px;
+    font-weight: 600;
+  }
+}
+
+@media (max-width: 700px) {
+  :host {
+    padding: 32px 16px 48px;
+  }
+
+  .page-header {
+    h1 {
+      font-size: 30px;
+    }
+  }
+
+  .contact-form {
+    padding: 24px;
+  }
+}

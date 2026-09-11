@@ -1,53 +1,12 @@
 :host {
-  display: block;
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
-  background: #f5f7fb;
-}
-
-.navbar {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  height: 72px;
-  padding: 0 32px;
-  background: linear-gradient(135deg, #0f4c81, #1976d2);
-  color: white;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 20px;
-  font-weight: 600;
-}
-
-.brand mat-icon {
-  width: 30px;
-  height: 30px;
-  font-size: 30px;
-}
-
-.spacer {
-  flex: 1;
-}
-
-nav {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-nav a {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  color: white;
-  border-radius: 10px;
+  background: var(--background);
 }
 
 .main-content {
+  flex: 1;
   width: min(1200px, calc(100% - 40px));
   margin: 0 auto;
   padding: 40px 0;

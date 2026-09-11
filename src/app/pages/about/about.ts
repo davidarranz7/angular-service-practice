@@ -11,6 +11,7 @@ import {
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-about',
@@ -21,6 +22,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatSelectModule,
     MatFormFieldModule,
     MatButtonModule,
+    TranslatePipe,
   ],
   templateUrl: './about.html',
   styleUrl: './about.scss',

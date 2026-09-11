@@ -1,6 +1,6 @@
 <div class="page-container">
   <header class="page-header">
-    <h1>Usuarios</h1>
+    <h1>{{ 'USERS.TITLE' | translate }}</h1>
 
     <div class="header-actions">
       <div class="search-container">
@@ -8,7 +8,7 @@
 
         <input
           type="search"
-          placeholder="Buscar usuario..."
+          placeholder="{{ 'USERS.SEARCH' | translate }}"
           [value]="nameSearch()"
           (input)="onNameSearchChange($event)"
           (keydown.enter)="onNameSearchEnter()"
@@ -25,9 +25,9 @@
       </div>
 
       <mat-form-field appearance="outline" class="city-filter" subscriptSizing="dynamic">
-        <mat-label>Ciudad</mat-label>
+        <mat-label>{{ 'USERS.CITY' | translate }}</mat-label>
         <mat-select [value]="cityFilter()" (selectionChange)="onCityFilterChange($event.value)">
-          <mat-option value=""> Todas las ciudades </mat-option>
+          <mat-option value=""> {{ 'USERS.ALL_CITIES' | translate }} </mat-option>
           @for (city of cities(); track city) {
             <mat-option [value]="city">
               {{ city }}
@@ -38,12 +38,12 @@
 
       <button mat-stroked-button type="button" class="reset-button" (click)="resetFilters()">
         <mat-icon>restart-alt</mat-icon>
-        <span>Restablecer filtros</span>
+        <span>{{ 'USERS.RESET_FILTERS' | translate }}</span>
       </button>
 
       <div class="users-count">
         <mat-icon>group</mat-icon>
-        <span>{{ users().length }} usuarios</span>
+        <span>{{ 'USERS.COUNT' | translate: { count: users().length } }}</span>
       </div>
     </div>
   </header>
@@ -52,10 +52,10 @@
     <table class="users-table">
       <thead>
         <tr>
-          <th>ID</th>
-          <th>USUARIO</th>
-          <th>EMAIL</th>
-          <th>TELÉFONO</th>
+          <th>{{ 'USERS.ID' | translate }}</th>
+          <th>{{ 'USERS.USERNAME' | translate }}</th>
+          <th>{{ 'USERS.EMAIL' | translate }}</th>
+          <th>{{ 'USERS.PHONE' | translate }}</th>
           <th class="detail-header"></th>
         </tr>
       </thead>

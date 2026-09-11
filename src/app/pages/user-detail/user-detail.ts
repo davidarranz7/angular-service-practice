@@ -7,10 +7,18 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-user-detail',
-  imports: [MatButtonModule, MatCardModule, MatDividerModule, MatIconModule, RouterLink],
+  imports: [
+    MatButtonModule,
+    MatCardModule,
+    MatDividerModule,
+    MatIconModule,
+    RouterLink,
+    TranslatePipe,
+  ],
   templateUrl: './user-detail.html',
   styleUrl: './user-detail.scss',
 })

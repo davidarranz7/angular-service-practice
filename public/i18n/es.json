@@ -1,0 +1,54 @@
+{
+  "NAVBAR": {
+    "HOME": "Inicio",
+    "ABOUT": "Acerca de",
+    "CONTACT": "Contacto"
+  },
+  "HOME": {
+    "TITLE": "Bienvenid@ a la pagina {{name}}",
+    "CARD_1": "Tarjeta 1",
+    "CARD_2": "Tarjeta 2",
+    "CARD_3": "Tarjeta 3"
+  },
+  "CONTACT": {
+    "TITLE": "Formulario de contacto",
+    "SUBTITLE": "Envíanos un mensaje y nos pondremos en contacto contigo.",
+    "NAME": "Nombre",
+    "EMAIL": "Email",
+    "MESSAGE": "Mensaje",
+    "SEND": "Enviar"
+  },
+  "USERS": {
+    "TITLE": "Usuarios",
+    "SEARCH": "Buscar usuario...",
+    "CITY": "Ciudad",
+    "ALL_CITIES": "Todas las ciudades",
+    "RESET_FILTERS": "Restablecer filtros",
+    "COUNT": "{{count}} usuarios",
+    "ID": "ID",
+    "USERNAME": "usuario",
+    "EMAIL": "Email",
+    "PHONE": "Teléfono"
+  },
+  "USER_DETAIL": {
+    "BACK": "Volver a usuarios",
+    "INFORMATION": "Información",
+    "PERSONAL_INFORMATION": "Información personal",
+    "ID": "ID",
+    "USERNAME": "Usuario",
+    "EMAIL": "Email",
+    "PHONE": "Teléfono",
+    "WEBSITE": "Sitio web",
+    "ADDRESS": "Dirección",
+    "STREET": "Calle",
+    "SUITE": "Suite",
+    "CITY": "Ciudad",
+    "ZIPCODE": "Código postal",
+    "COORDINATES": "Coordenadas",
+    "COMPANY": "Empresa",
+    "COMPANY_NAME": "Nombre",
+    "CATCH_PHRASE": "Eslogan",
+    "BS": "BS",
+    "LOADING": "Cargando usuario..."
+  }
+}

@@ -1,0 +1,33 @@
+<mat-toolbar class="navbar">
+  <div class="navbar-content">
+    <div class="navbar-brand">
+      <div class="brand-icon">
+        <mat-icon>change_history</mat-icon>
+      </div>
+      <span>AngularPractice</span>
+    </div>
+
+    <nav class="navbar-links">
+      <a routerLink="/home" routerLinkActive="active">
+        {{ 'NAVBAR.HOME' | translate }}
+      </a>
+      <a routerLink="/about" routerLinkActive="active">
+        {{ 'NAVBAR.ABOUT' | translate }}
+      </a>
+      <a routerLink="/contact" routerLinkActive="active">
+        {{ 'NAVBAR.CONTACT' | translate }}
+      </a>
+    </nav>
+
+    <button class="navbar-language" type="button" [matMenuTriggerFor]="languageMenu">
+      <mat-icon>language</mat-icon>
+      <span>ES / EN</span>
+      <mat-icon class="language-arrow">expand_more</mat-icon>
+    </button>
+
+    <mat-menu #languageMenu="matMenu">
+      <button mat-menu-item (click)="changeLanguage('es')">Español</button>
+      <button mat-menu-item (click)="changeLanguage('en')">English</button>
+    </mat-menu>
+  </div>
+</mat-toolbar>
