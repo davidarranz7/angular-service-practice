@@ -1,15 +1,18 @@
-<div class="login-container">
+<form class="login-container" [formGroup]="loginForm" (ngSubmit)="login()">
   <h1>Iniciar sesión</h1>
 
-  <mat-form-field apparence="outline">
+  <mat-form-field appearance="outline">
     <mat-label>Usuario</mat-label>
-    <input matInput type="text" />
+    <input matInput type="text" formControlName="username" autocomplete="username" />
   </mat-form-field>
 
-  <mat-form-field apparence="outline">
+  <mat-form-field appearance="outline">
     <mat-label>Contraseña</mat-label>
-    <input matInput type="password" />
+    <input matInput type="password" formControlName="password" autocomplete="current-password" />
   </mat-form-field>
 
-  <button mat-flat-button type="button" (click)="login()">Iniciar sesión</button>
-</div>
+  @if (loginError) {
+    <p class="login-error">Usuario o contraseña incorrectos</p>
+  }
+  <button mat-flat-button type="submit" [disabled]="loginForm.invalid">Iniciar sesión</button>
+</form>
