@@ -4,6 +4,7 @@ import { of } from 'rxjs';
 import { UserDetail } from './user-detail';
 import { UserService } from '../../services/user-service';
 import { User } from '../../models/user';
+import { provideTranslateService } from '@ngx-translate/core';
 
 describe('UserDetail', () => {
   let component: UserDetail;
@@ -44,6 +45,7 @@ describe('UserDetail', () => {
     await TestBed.configureTestingModule({
       imports: [UserDetail],
       providers: [
+        provideTranslateService(),
         provideRouter([]),
         {
           provide: ActivatedRoute,

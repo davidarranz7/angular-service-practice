@@ -1,0 +1,19 @@
+.admin-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 32px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+
+  h1 {
+    margin-top: 0;
+    color: var(--text-primary);
+  }
+
+  p {
+    color: var(--text-secondary);
+  }
+}

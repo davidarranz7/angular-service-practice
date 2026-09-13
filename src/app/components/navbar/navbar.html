@@ -11,23 +11,39 @@
       <a routerLink="/home" routerLinkActive="active">
         {{ 'NAVBAR.HOME' | translate }}
       </a>
+
       <a routerLink="/about" routerLinkActive="active">
         {{ 'NAVBAR.ABOUT' | translate }}
       </a>
+
       <a routerLink="/contact" routerLinkActive="active">
         {{ 'NAVBAR.CONTACT' | translate }}
       </a>
     </nav>
 
-    <button class="navbar-language" type="button" [matMenuTriggerFor]="languageMenu">
-      <mat-icon>language</mat-icon>
-      <span>ES / EN</span>
-      <mat-icon class="language-arrow">expand_more</mat-icon>
-    </button>
+    <div class="navbar-actions">
+      @if (auth.isLoggedIn()) {
+        <button class="auth-button" mat-button type="button" (click)="logout()">
+          <mat-icon>logout</mat-icon>
+          {{ 'NAVBAR.LOGOUT' | translate }}
+        </button>
+      } @else {
+        <a class="auth-button" mat-button routerLink="/login">
+          <mat-icon>login</mat-icon>
+          {{ 'NAVBAR.LOGIN' | translate }}
+        </a>
+      }
 
-    <mat-menu #languageMenu="matMenu">
-      <button mat-menu-item (click)="changeLanguage('es')">Español</button>
-      <button mat-menu-item (click)="changeLanguage('en')">English</button>
-    </mat-menu>
+      <button class="navbar-language" type="button" [matMenuTriggerFor]="languageMenu">
+        <mat-icon>language</mat-icon>
+        <span>ES / EN</span>
+        <mat-icon class="language-arrow">expand_more</mat-icon>
+      </button>
+    </div>
   </div>
+
+  <mat-menu #languageMenu="matMenu">
+    <button mat-menu-item (click)="changeLanguage('es')">Español</button>
+    <button mat-menu-item (click)="changeLanguage('en')">English</button>
+  </mat-menu>
 </mat-toolbar>

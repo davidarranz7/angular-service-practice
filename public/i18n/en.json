@@ -2,7 +2,9 @@
   "NAVBAR": {
     "HOME": "Home",
     "ABOUT": "About",
-    "CONTACT": "Contact"
+    "CONTACT": "Contact",
+    "LOGIN": "Login",
+    "LOGOUT": "Logout"
   },
   "HOME": {
     "TITLE": "Welcome to {{name}}´s page",
