@@ -8,13 +8,20 @@ import { authInterceptor } from './core/interceptors/auth-interceptor';
 import { loggingInterceptor } from './core/interceptors/logging-interceptor';
 import { errorInterceptor } from './core/interceptors/error-interceptor';
 import { loadingInterceptor } from './core/interceptors/loading-interceptor';
+import { adminHeaderInterceptor } from './core/interceptors/admin-header-interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideRouter(routes),
     provideHttpClient(
-      withInterceptors([authInterceptor, loggingInterceptor, errorInterceptor, loadingInterceptor]),
+      withInterceptors([
+        authInterceptor,
+        loggingInterceptor,
+        errorInterceptor,
+        loadingInterceptor,
+        adminHeaderInterceptor,
+      ]),
     ),
     provideTranslateService({
       loader: provideTranslateHttpLoader({
