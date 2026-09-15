@@ -7,7 +7,7 @@
     "LOGOUT": "Logout"
   },
   "HOME": {
-    "TITLE": "Welcome to {{name}}´s page",
+    "TITLE": "Welcome to {{name}}'s page",
     "CARD_1": "Card 1",
     "CARD_2": "Card 2",
     "CARD_3": "Card 3",
@@ -17,7 +17,20 @@
     "SUBSCRIPTION_PRICE": "Subscription",
     "PROGRESS": "Progress",
     "DESCRIPTION_TITLE": "Slice Test",
-    "DESCRIPTION": "This section was created to test how the slice pipe works, allowing only part of a text to be displayed without modifying its original content."
+    "DESCRIPTION": "This section was created to test how the slice pipe works, allowing only part of a text to be displayed without modifying its original content.",
+    "CUSTOM_PIPES": {
+      "GREETING_TEST": "SaludoPipe Test",
+      "DOUBLE_TEST": "DoblePipe Test",
+      "ORIGINAL_VALUE": "Original value",
+      "DOUBLE_VALUE": "Double value",
+      "HIGHLIGHT_TEST": "ResaltarPipe Test",
+      "AGE_TEST": "EdadPipe Test",
+      "BIRTH_DATE": "Birth date",
+      "CURRENT_AGE": "Current age",
+      "YEARS": "years",
+      "JSON_TEST": "JsonPipe Test",
+      "AUTHENTICATED_USER": "Authenticated user"
+    }
   },
   "CONTACT": {
     "TITLE": "Contact Form",

@@ -41,7 +41,7 @@ export class Auth {
   getToken(): string | null {
     return this.token();
   }
-  
+
   logout(): void {
     localStorage.removeItem(this.tokenKey);
     this.token.set(null);

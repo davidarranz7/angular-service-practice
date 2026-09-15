@@ -30,10 +30,39 @@
 
 @if (auth.currentUser()) {
   <section class="json-section">
-    <h2>Prueba de JsonPipe</h2>
+    <h2>{{ 'HOME.CUSTOM_PIPES.JSON_TEST' | translate }}</h2>
 
-    <p>Usuario autenticado:</p>
+    <p>{{ 'HOME.CUSTOM_PIPES.AUTHENTICATED_USER' | translate }}</p>
 
     <pre>{{ auth.currentUser() | json }}</pre>
   </section>
 }
+
+<section class="custom-pipe-section">
+  <h2>{{ 'HOME.CUSTOM_PIPES.GREETING_TEST' | translate }}</h2>
+
+  <p>{{ 'Carlos' | saludo }}</p>
+</section>
+
+<section class="custom-pipe-section">
+  <h2>{{ 'HOME.CUSTOM_PIPES.DOUBLE_TEST' | translate }}</h2>
+
+  <p>{{ 'HOME.CUSTOM_PIPES.ORIGINAL_VALUE' | translate }}: {{ numero }}</p>
+  <p>{{ 'HOME.CUSTOM_PIPES.DOUBLE_VALUE' | translate }}: {{ numero | doble }}</p>
+</section>
+
+<section class="custom-pipe-section">
+  <h2>{{ 'HOME.CUSTOM_PIPES.HIGHLIGHT_TEST' | translate }}</h2>
+
+  <p [innerHTML]="'Angular' | resaltar"></p>
+</section>
+
+<section class="custom-pipe-section">
+  <h2>{{ 'HOME.CUSTOM_PIPES.AGE_TEST' | translate }}</h2>
+
+  <p>{{ 'HOME.CUSTOM_PIPES.BIRTH_DATE' | translate }}: 10/05/2000</p>
+  <p>
+    {{ 'HOME.CUSTOM_PIPES.CURRENT_AGE' | translate }}: {{ '2000-05-10' | edad }}
+    {{ 'HOME.CUSTOM_PIPES.YEARS' | translate }}
+  </p>
+</section>

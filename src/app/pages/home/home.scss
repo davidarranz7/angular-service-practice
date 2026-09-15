@@ -104,3 +104,22 @@ app-title {
     line-height: 1.5;
   }
 }
+
+.custom-pipe-section {
+  margin-top: 20px;
+  padding: 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+
+  h2 {
+    margin: 0 0 12px;
+    color: var(--text-primary);
+  }
+
+  p {
+    margin: 6px 0;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+}

@@ -17,7 +17,20 @@
     "SUBSCRIPTION_PRICE": "Suscripción",
     "PROGRESS": "Progreso",
     "DESCRIPTION_TITLE": "Prueba de Slice",
-    "DESCRIPTION": "Esta parte se ha creado para probar el funcionamiento del pipe slice, que permite mostrar solo una parte de un texto sin modificar su contenido original."
+    "DESCRIPTION": "Esta parte se ha creado para probar el funcionamiento del pipe slice, que permite mostrar solo una parte de un texto sin modificar su contenido original.",
+    "CUSTOM_PIPES": {
+      "GREETING_TEST": "Prueba de SaludoPipe",
+      "DOUBLE_TEST": "Prueba de DoblePipe",
+      "ORIGINAL_VALUE": "Valor original",
+      "DOUBLE_VALUE": "Valor duplicado",
+      "HIGHLIGHT_TEST": "Prueba de ResaltarPipe",
+      "AGE_TEST": "Prueba de EdadPipe",
+      "BIRTH_DATE": "Fecha de nacimiento",
+      "CURRENT_AGE": "Edad actual",
+      "YEARS": "años",
+      "JSON_TEST": "Prueba de JsonPipe",
+      "AUTHENTICATED_USER": "Usuario autenticado"
+    }
   },
   "CONTACT": {
     "TITLE": "Formulario de contacto",
