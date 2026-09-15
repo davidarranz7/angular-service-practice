@@ -36,3 +36,41 @@ app-title {
   max-width: 1000px;
   margin: 48px auto 0;
 }
+
+.date-info {
+  display: flex;
+  gap: 24px;
+  margin: 20px 0 32px;
+  padding: 16px 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+
+  p {
+    margin: 0;
+    color: var(--text-secondary);
+
+    strong {
+      color: var(--text-primary);
+    }
+  }
+}
+
+.description-section {
+  margin-top: 32px;
+  padding: 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+
+  h2 {
+    margin: 0 0 12px;
+    color: var(--text-primary);
+  }
+
+  p {
+    margin: 0;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+}

@@ -1,6 +1,29 @@
 <app-title></app-title>
+<div class="date-info">
+  <p>{{ 'HOME.DATE' | translate }}: {{ currentDate | date: 'shortDate' : undefined : locale }}</p>
+
+  <p>
+    {{ 'HOME.FULL_DATE' | translate }}: {{ currentDate | date: 'fullDate' : undefined : locale }}
+  </p>
+
+  <p>{{ 'HOME.TIME' | translate }}: {{ currentDate | date: 'shortTime' : undefined : locale }}</p>
+
+  <p>
+    {{ 'HOME.SUBSCRIPTION_PRICE' | translate }}:
+    {{ subscriptionPrice | currency: 'EUR' : 'symbol' : undefined : locale }}
+  </p>
+
+  <p>{{ 'HOME.PROGRESS' | translate }}: {{ progress | percent: '1.0-0' : locale }}</p>
+</div>
+
 <div class="cards-container">
   <app-card [text]="'HOME.CARD_1' | translate" [imageUrl]="'HOME.IMAGE_1' | translate"></app-card>
   <app-card [text]="'HOME.CARD_2' | translate" [imageUrl]="'HOME.IMAGE_2' | translate"></app-card>
   <app-card [text]="'HOME.CARD_3' | translate" [imageUrl]="'HOME.IMAGE_3' | translate"></app-card>
 </div>
+
+<section class="description-section">
+  <h2>{{ 'HOME.DESCRIPTION_TITLE' | translate }}</h2>
+
+  <p>{{ 'HOME.DESCRIPTION' | translate | slice: 0 : 120 }}...</p>
+</section>

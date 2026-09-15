@@ -10,7 +10,14 @@
     "TITLE": "Bienvenid@ a la pagina {{name}}",
     "CARD_1": "Tarjeta 1",
     "CARD_2": "Tarjeta 2",
-    "CARD_3": "Tarjeta 3"
+    "CARD_3": "Tarjeta 3",
+    "DATE": "Fecha",
+    "FULL_DATE": "Fecha completa",
+    "TIME": "Hora",
+    "SUBSCRIPTION_PRICE": "Suscripción",
+    "PROGRESS": "Progreso",
+    "DESCRIPTION_TITLE": "Prueba de Slice",
+    "DESCRIPTION": "Esta parte se ha creado para probar el funcionamiento del pipe slice, que permite mostrar solo una parte de un texto sin modificar su contenido original."
   },
   "CONTACT": {
     "TITLE": "Formulario de contacto",

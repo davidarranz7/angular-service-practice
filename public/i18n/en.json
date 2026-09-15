@@ -10,7 +10,14 @@
     "TITLE": "Welcome to {{name}}´s page",
     "CARD_1": "Card 1",
     "CARD_2": "Card 2",
-    "CARD_3": "Card 3"
+    "CARD_3": "Card 3",
+    "DATE": "Date",
+    "FULL_DATE": "Full date",
+    "TIME": "Time",
+    "SUBSCRIPTION_PRICE": "Subscription",
+    "PROGRESS": "Progress",
+    "DESCRIPTION_TITLE": "Slice Test",
+    "DESCRIPTION": "This section was created to test how the slice pipe works, allowing only part of a text to be displayed without modifying its original content."
   },
   "CONTACT": {
     "TITLE": "Contact Form",
