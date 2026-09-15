@@ -74,3 +74,33 @@ app-title {
     line-height: 1.6;
   }
 }
+
+.json-section {
+  margin-top: 32px;
+  padding: 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+
+  h2 {
+    margin: 0 0 12px;
+    color: var(--text-primary);
+  }
+
+  p {
+    margin: 0 0 12px;
+    color: var(--text-secondary);
+  }
+
+  pre {
+    margin: 0;
+    padding: 16px;
+    overflow-x: auto;
+    background: var(--background);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-family: monospace;
+    line-height: 1.5;
+  }
+}

@@ -27,3 +27,13 @@
 
   <p>{{ 'HOME.DESCRIPTION' | translate | slice: 0 : 120 }}...</p>
 </section>
+
+@if (auth.currentUser()) {
+  <section class="json-section">
+    <h2>Prueba de JsonPipe</h2>
+
+    <p>Usuario autenticado:</p>
+
+    <pre>{{ auth.currentUser() | json }}</pre>
+  </section>
+}
