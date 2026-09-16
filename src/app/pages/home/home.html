@@ -1,24 +1,39 @@
-<app-title></app-title>
-<div class="date-info">
-  <p>{{ 'HOME.DATE' | translate }}: {{ currentDate | date: 'shortDate' : undefined : locale }}</p>
+<div #homeTitle>
+  <app-title></app-title>
+</div>
 
+<div class="date-info">
   <p>
-    {{ 'HOME.FULL_DATE' | translate }}: {{ currentDate | date: 'fullDate' : undefined : locale }}
+    {{ 'HOME.DATE' | translate }}:
+    {{ currentDate | date: 'shortDate' : undefined : locale }}
   </p>
 
-  <p>{{ 'HOME.TIME' | translate }}: {{ currentDate | date: 'shortTime' : undefined : locale }}</p>
+  <p>
+    {{ 'HOME.FULL_DATE' | translate }}:
+    {{ currentDate | date: 'fullDate' : undefined : locale }}
+  </p>
+
+  <p>
+    {{ 'HOME.TIME' | translate }}:
+    {{ currentDate | date: 'shortTime' : undefined : locale }}
+  </p>
 
   <p>
     {{ 'HOME.SUBSCRIPTION_PRICE' | translate }}:
     {{ subscriptionPrice | currency: 'EUR' : 'symbol' : undefined : locale }}
   </p>
 
-  <p>{{ 'HOME.PROGRESS' | translate }}: {{ progress | percent: '1.0-0' : locale }}</p>
+  <p>
+    {{ 'HOME.PROGRESS' | translate }}:
+    {{ progress | percent: '1.0-0' : locale }}
+  </p>
 </div>
 
 <div class="cards-container">
   <app-card [text]="'HOME.CARD_1' | translate" [imageUrl]="'HOME.IMAGE_1' | translate"></app-card>
+
   <app-card [text]="'HOME.CARD_2' | translate" [imageUrl]="'HOME.IMAGE_2' | translate"></app-card>
+
   <app-card [text]="'HOME.CARD_3' | translate" [imageUrl]="'HOME.IMAGE_3' | translate"></app-card>
 </div>
 
@@ -32,7 +47,9 @@
   <section class="json-section">
     <h2>{{ 'HOME.CUSTOM_PIPES.JSON_TEST' | translate }}</h2>
 
-    <p>{{ 'HOME.CUSTOM_PIPES.AUTHENTICATED_USER' | translate }}</p>
+    <p>
+      {{ 'HOME.CUSTOM_PIPES.AUTHENTICATED_USER' | translate }}
+    </p>
 
     <pre>{{ auth.currentUser() | json }}</pre>
   </section>
@@ -47,8 +64,15 @@
 <section class="custom-pipe-section">
   <h2>{{ 'HOME.CUSTOM_PIPES.DOUBLE_TEST' | translate }}</h2>
 
-  <p>{{ 'HOME.CUSTOM_PIPES.ORIGINAL_VALUE' | translate }}: {{ numero }}</p>
-  <p>{{ 'HOME.CUSTOM_PIPES.DOUBLE_VALUE' | translate }}: {{ numero | doble }}</p>
+  <p>
+    {{ 'HOME.CUSTOM_PIPES.ORIGINAL_VALUE' | translate }}:
+    {{ numero }}
+  </p>
+
+  <p>
+    {{ 'HOME.CUSTOM_PIPES.DOUBLE_VALUE' | translate }}:
+    {{ numero | doble }}
+  </p>
 </section>
 
 <section class="custom-pipe-section">
@@ -61,8 +85,10 @@
   <h2>{{ 'HOME.CUSTOM_PIPES.AGE_TEST' | translate }}</h2>
 
   <p>{{ 'HOME.CUSTOM_PIPES.BIRTH_DATE' | translate }}: 10/05/2000</p>
+
   <p>
-    {{ 'HOME.CUSTOM_PIPES.CURRENT_AGE' | translate }}: {{ '2000-05-10' | edad }}
+    {{ 'HOME.CUSTOM_PIPES.CURRENT_AGE' | translate }}:
+    {{ '2000-05-10' | edad }}
     {{ 'HOME.CUSTOM_PIPES.YEARS' | translate }}
   </p>
 </section>
