@@ -1,4 +1,12 @@
-import { AfterViewInit, Component, ElementRef, ViewChild, inject } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  QueryList,
+  ViewChild,
+  ViewChildren,
+  inject,
+} from '@angular/core';
 import { CurrencyPipe, DatePipe, JsonPipe, PercentPipe, SlicePipe } from '@angular/common';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { gsap } from 'gsap';
@@ -36,9 +44,17 @@ export class Home implements AfterViewInit {
   readonly auth = inject(Auth);
   readonly numero = 5;
 
-  @ViewChild('homeTitle') homeTitle!: ElementRef<HTMLDivElement>;
-  @ViewChild('homeSubtitle') homeSubtitle!: ElementRef<HTMLParagraphElement>;
-  @ViewChild('homeButton') homeButton!: ElementRef<HTMLButtonElement>;
+  @ViewChild('homeTitle')
+  homeTitle!: ElementRef<HTMLDivElement>;
+
+  @ViewChild('homeSubtitle')
+  homeSubtitle!: ElementRef<HTMLParagraphElement>;
+
+  @ViewChild('homeButton')
+  homeButton!: ElementRef<HTMLButtonElement>;
+
+  @ViewChildren('homeCard', { read: ElementRef })
+  homeCards!: QueryList<ElementRef<HTMLElement>>;
 
   currentDate = new Date();
   subscriptionPrice = 9.99;
@@ -49,6 +65,8 @@ export class Home implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
+    const cards = this.homeCards.map((card) => card.nativeElement);
+
     const timeline = gsap.timeline();
 
     timeline
@@ -69,6 +87,13 @@ export class Home implements AfterViewInit {
         opacity: 0,
         duration: 0.5,
         ease: 'back.out(1.7)',
+      })
+      .from(cards, {
+        y: 40,
+        opacity: 0,
+        duration: 0.5,
+        stagger: 0.2,
+        ease: 'power2.out',
       });
   }
 }

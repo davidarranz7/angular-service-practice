@@ -36,11 +36,23 @@
 </div>
 
 <div class="cards-container">
-  <app-card [text]="'HOME.CARD_1' | translate" [imageUrl]="'HOME.IMAGE_1' | translate"></app-card>
+  <app-card
+    #homeCard
+    [text]="'HOME.CARD_1' | translate"
+    [imageUrl]="'HOME.IMAGE_1' | translate"
+  ></app-card>
 
-  <app-card [text]="'HOME.CARD_2' | translate" [imageUrl]="'HOME.IMAGE_2' | translate"></app-card>
+  <app-card
+    #homeCard
+    [text]="'HOME.CARD_2' | translate"
+    [imageUrl]="'HOME.IMAGE_2' | translate"
+  ></app-card>
 
-  <app-card [text]="'HOME.CARD_3' | translate" [imageUrl]="'HOME.IMAGE_3' | translate"></app-card>
+  <app-card
+    #homeCard
+    [text]="'HOME.CARD_3' | translate"
+    [imageUrl]="'HOME.IMAGE_3' | translate"
+  ></app-card>
 </div>
 
 <section class="description-section">
