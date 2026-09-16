@@ -37,6 +37,8 @@ export class Home implements AfterViewInit {
   readonly numero = 5;
 
   @ViewChild('homeTitle') homeTitle!: ElementRef<HTMLDivElement>;
+  @ViewChild('homeSubtitle') homeSubtitle!: ElementRef<HTMLParagraphElement>;
+  @ViewChild('homeButton') homeButton!: ElementRef<HTMLButtonElement>;
 
   currentDate = new Date();
   subscriptionPrice = 9.99;
@@ -47,14 +49,26 @@ export class Home implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    console.log('HOME GSAP ejecutado');
+    const timeline = gsap.timeline();
 
-    gsap.from(this.homeTitle.nativeElement, {
-      y: -80,
-      opacity: 0,
-      duration: 1.2,
-      delay: 0.2,
-      ease: 'power2.out',
-    });
+    timeline
+      .from(this.homeTitle.nativeElement, {
+        y: -60,
+        opacity: 0,
+        duration: 0.8,
+        ease: 'power2.out',
+      })
+      .from(this.homeSubtitle.nativeElement, {
+        y: 30,
+        opacity: 0,
+        duration: 0.6,
+        ease: 'power2.out',
+      })
+      .from(this.homeButton.nativeElement, {
+        scale: 0,
+        opacity: 0,
+        duration: 0.5,
+        ease: 'back.out(1.7)',
+      });
   }
 }
