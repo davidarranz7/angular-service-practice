@@ -150,3 +150,27 @@
     }
   }
 }
+
+.brand-icon {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.brand-icon-svg {
+  width: 24px;
+  height: 24px;
+
+  line {
+    stroke: white;
+    stroke-width: 3;
+    stroke-linecap: round;
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+}

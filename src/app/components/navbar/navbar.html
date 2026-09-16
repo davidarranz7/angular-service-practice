@@ -1,9 +1,14 @@
 <mat-toolbar class="navbar">
   <div class="navbar-content">
-    <div class="navbar-brand">
+    <div class="navbar-brand" (mouseenter)="animateBrand()">
       <div class="brand-icon">
-        <mat-icon>change_history</mat-icon>
+        <svg class="brand-icon-svg" viewBox="0 0 40 40">
+          <line #leftLine x1="20" y1="6" x2="7" y2="32" />
+          <line #rightLine x1="20" y1="6" x2="33" y2="32" />
+          <line #bottomLine x1="7" y1="32" x2="33" y2="32" />
+        </svg>
       </div>
+
       <span>AngularPractice</span>
     </div>
 
