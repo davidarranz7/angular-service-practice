@@ -40,6 +40,7 @@ import { EdadPipe } from '../../pipes/edad-pipe';
 })
 export class Home implements AfterViewInit {
   private readonly translateService = inject(TranslateService);
+  private timeline!: gsap.core.Timeline;
 
   readonly auth = inject(Auth);
   readonly numero = 5;
@@ -67,7 +68,8 @@ export class Home implements AfterViewInit {
   ngAfterViewInit(): void {
     const cards = this.homeCards.map((card) => card.nativeElement);
 
-    const timeline = gsap.timeline({
+    this.timeline = gsap.timeline({
+      paused: true,
       onStart: () => {
         console.log('Animación iniciada');
       },
@@ -76,7 +78,7 @@ export class Home implements AfterViewInit {
       },
     });
 
-    timeline
+    this.timeline
       .addLabel('intro')
       .from(
         this.homeTitle.nativeElement,
@@ -121,5 +123,17 @@ export class Home implements AfterViewInit {
       yoyo: true,
       ease: 'power1.inOut',
     });
+  }
+
+  playAnimation(): void {
+    this.timeline.play();
+  }
+
+  pauseAnimation(): void {
+    this.timeline.pause();
+  }
+
+  reverseAnimation(): void {
+    this.timeline.reverse();
   }
 }

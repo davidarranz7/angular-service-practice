@@ -6,6 +6,12 @@
   <p #homeSubtitle class="home-subtitle">Aprendiendo Angular con GSAP</p>
 
   <button #homeButton class="home-button" type="button">Empezar</button>
+
+  <div class="animation-controls">
+    <button type="button" (click)="playAnimation()">Play</button>
+    <button type="button" (click)="pauseAnimation()">Pause</button>
+    <button type="button" (click)="reverseAnimation()">Reverse</button>
+  </div>
 </div>
 
 <div class="date-info">
