@@ -67,7 +67,14 @@ export class Home implements AfterViewInit {
   ngAfterViewInit(): void {
     const cards = this.homeCards.map((card) => card.nativeElement);
 
-    const timeline = gsap.timeline();
+    const timeline = gsap.timeline({
+      onStart: () => {
+        console.log('Animación iniciada');
+      },
+      onComplete: () => {
+        console.log('Animación completada');
+      },
+    });
 
     timeline
       .addLabel('intro')
