@@ -70,12 +70,17 @@ export class Home implements AfterViewInit {
     const timeline = gsap.timeline();
 
     timeline
-      .from(this.homeTitle.nativeElement, {
-        y: -60,
-        opacity: 0,
-        duration: 0.8,
-        ease: 'power2.out',
-      })
+      .addLabel('intro')
+      .from(
+        this.homeTitle.nativeElement,
+        {
+          y: -60,
+          opacity: 0,
+          duration: 0.8,
+          ease: 'power2.out',
+        },
+        'intro',
+      )
       .from(this.homeSubtitle.nativeElement, {
         y: 30,
         opacity: 0,
@@ -88,12 +93,26 @@ export class Home implements AfterViewInit {
         duration: 0.5,
         ease: 'back.out(1.7)',
       })
-      .from(cards, {
-        y: 40,
-        opacity: 0,
-        duration: 0.5,
-        stagger: 0.2,
-        ease: 'power2.out',
-      });
+      .addLabel('cards')
+      .from(
+        cards,
+        {
+          y: 40,
+          opacity: 0,
+          duration: 0.5,
+          stagger: 0.2,
+          ease: 'power2.out',
+        },
+        'cards',
+      );
+
+    gsap.to(this.homeButton.nativeElement, {
+      scale: 1.2,
+      duration: 2.5,
+      repeat: -1,
+      repeatDelay: 0.5,
+      yoyo: true,
+      ease: 'power1.inOut',
+    });
   }
 }
