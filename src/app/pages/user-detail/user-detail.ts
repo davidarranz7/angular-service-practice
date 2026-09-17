@@ -1,4 +1,4 @@
-import { Component, inject, signal, ElementRef, ViewChild } from '@angular/core';
+import { Component, inject, signal, ElementRef, ViewChild, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UserService } from '../../services/user-service';
 import { User } from '../../models/user';
@@ -8,7 +8,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
-import { gsap } from 'gsap/gsap-core';
+import { gsap } from 'gsap';
 
 @Component({
   selector: 'app-user-detail',
@@ -23,9 +23,14 @@ import { gsap } from 'gsap/gsap-core';
   templateUrl: './user-detail.html',
   styleUrl: './user-detail.scss',
 })
-export class UserDetail {
+export class UserDetail implements OnDestroy {
   user = signal<User | null>(null);
+
   private userCardElement?: HTMLElement;
+  private media?: ReturnType<typeof gsap.matchMedia>;
+
+  private route = inject(ActivatedRoute);
+  private userService = inject(UserService);
 
   @ViewChild('userCard', { read: ElementRef })
   set userCard(element: ElementRef<HTMLElement> | undefined) {
@@ -47,9 +52,9 @@ export class UserDetail {
       return;
     }
 
-    const media = gsap.matchMedia();
+    this.media = gsap.matchMedia();
 
-    media.add('(max-width: 600px)', () => {
+    this.media.add('(max-width: 600px)', () => {
       gsap.from(userCard, {
         x: -200,
         opacity: 0,
@@ -59,7 +64,7 @@ export class UserDetail {
       });
     });
 
-    media.add('(min-width: 601px)', () => {
+    this.media.add('(min-width: 601px)', () => {
       gsap.from(userCard, {
         y: -180,
         opacity: 0,
@@ -70,16 +75,18 @@ export class UserDetail {
     });
   }
 
-  private route = inject(ActivatedRoute);
-  private userService = inject(UserService);
-
   ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
+
     this.userService.getUserById(id).subscribe({
       next: (data) => {
         this.user.set(data);
       },
       error: (err) => console.error('Error fetching user details: ', err),
     });
+  }
+
+  ngOnDestroy(): void {
+    this.media?.revert();
   }
 }
