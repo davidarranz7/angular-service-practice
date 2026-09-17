@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { About } from './about';
 import { provideTranslateService } from '@ngx-translate/core';
 import { provideRouter } from '@angular/router';
 import { of } from 'rxjs';
@@ -10,12 +9,30 @@ const userServiceMock = {
 };
 
 describe('About', () => {
-  let component: About;
-  let fixture: ComponentFixture<About>;
+  let fixture: ComponentFixture<any>;
+  let component: any;
+  let AboutComponent: any;
 
   beforeEach(async () => {
+    Object.defineProperty(window, 'matchMedia', {
+      writable: true,
+      value: (query: string) => ({
+        matches: false,
+        media: query,
+        onchange: null,
+        addListener: () => {},
+        removeListener: () => {},
+        addEventListener: () => {},
+        removeEventListener: () => {},
+        dispatchEvent: () => false,
+      }),
+    });
+
+    const module = await import('./about');
+    AboutComponent = module.About;
+
     await TestBed.configureTestingModule({
-      imports: [About],
+      imports: [AboutComponent],
       providers: [
         provideTranslateService(),
         provideRouter([]),
@@ -26,8 +43,9 @@ describe('About', () => {
       ],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(About);
+    fixture = TestBed.createComponent(AboutComponent);
     component = fixture.componentInstance;
+
     await fixture.whenStable();
   });
 

@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject, signal, ElementRef, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UserService } from '../../services/user-service';
 import { User } from '../../models/user';
@@ -8,6 +8,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
+import { gsap } from 'gsap/gsap-core';
 
 @Component({
   selector: 'app-user-detail',
@@ -24,6 +25,50 @@ import { TranslatePipe } from '@ngx-translate/core';
 })
 export class UserDetail {
   user = signal<User | null>(null);
+  private userCardElement?: HTMLElement;
+
+  @ViewChild('userCard', { read: ElementRef })
+  set userCard(element: ElementRef<HTMLElement> | undefined) {
+    this.userCardElement = element?.nativeElement;
+
+    if (this.userCardElement) {
+      this.animateUserCard();
+    }
+  }
+
+  private animateUserCard(): void {
+    if (typeof window.matchMedia !== 'function') {
+      return;
+    }
+
+    const userCard = this.userCardElement;
+
+    if (!userCard) {
+      return;
+    }
+
+    const media = gsap.matchMedia();
+
+    media.add('(max-width: 600px)', () => {
+      gsap.from(userCard, {
+        x: -200,
+        opacity: 0,
+        scale: 0.7,
+        duration: 1.2,
+        ease: 'power2.out',
+      });
+    });
+
+    media.add('(min-width: 601px)', () => {
+      gsap.from(userCard, {
+        y: -180,
+        opacity: 0,
+        scale: 0.8,
+        duration: 1.2,
+        ease: 'power2.out',
+      });
+    });
+  }
 
   private route = inject(ActivatedRoute);
   private userService = inject(UserService);
