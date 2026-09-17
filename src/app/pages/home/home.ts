@@ -10,7 +10,6 @@ import {
 import { CurrencyPipe, DatePipe, JsonPipe, PercentPipe, SlicePipe } from '@angular/common';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { gsap } from 'gsap';
-
 import { Title } from '../../components/title/title';
 import { Card } from '../../components/card/card';
 import { Auth } from '../../core/services/auth';

@@ -1,4 +1,11 @@
-<mat-card #cardElement class="card" (click)="animateCard()">
+<mat-card
+  #cardElement
+  class="card"
+  (click)="animateCard()"
+  (mouseenter)="onMouseEnter()"
+  (mousemove)="onMouseMove($event)"
+  (mouseleave)="onMouseLeave()"
+>
   <div class="card-image">
     <p>{{ imageUrl }}</p>
   </div>

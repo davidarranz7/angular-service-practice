@@ -1,4 +1,13 @@
-import { Component, OnInit, inject, signal, computed } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  inject,
+  signal,
+  computed,
+  AfterViewInit,
+  ElementRef,
+  ViewChild,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UserService } from '../../services/user-service';
 import { User } from '../../models/user';
@@ -12,7 +21,10 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { TranslatePipe } from '@ngx-translate/core';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+gsap.registerPlugin(ScrollTrigger);
 @Component({
   selector: 'app-about',
   imports: [
@@ -27,11 +39,14 @@ import { TranslatePipe } from '@ngx-translate/core';
   templateUrl: './about.html',
   styleUrl: './about.scss',
 })
-export class About implements OnInit {
+export class About implements OnInit, AfterViewInit {
   users = signal<User[]>([]);
   nameSearch = signal('');
   nameFilter = signal('');
   cityFilter = signal('');
+
+  @ViewChild('usersTable')
+  usersTable!: ElementRef<HTMLDivElement>;
 
   private userService = inject(UserService);
 
@@ -101,6 +116,23 @@ export class About implements OnInit {
         this.users.set(data);
       },
       error: (err) => console.error('Error fetching users: ', err),
+    });
+  }
+
+  ngAfterViewInit(): void {
+    gsap.from(this.usersTable.nativeElement, {
+      y: 250,
+      x: -120,
+      opacity: 0,
+      scale: 0.75,
+      rotate: -8,
+      duration: 1.5,
+      ease: 'back.out(1.7)',
+      scrollTrigger: {
+        trigger: this.usersTable.nativeElement,
+        start: 'top 85%',
+        toggleActions: 'play none none reverse',
+      },
     });
   }
 }
